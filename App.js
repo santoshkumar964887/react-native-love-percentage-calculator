@@ -11,7 +11,19 @@ class  App extends React.Component {
     }
   }
   handlepress=()=>{
-    console.log("santosh")
+
+    fetch(`https://love-calculator.p.rapidapi.com/getPercentage?fname=${this.state.Male}&sname=${this.state.Female}`, {
+	"headers": {
+		"x-rapidapi-host": "love-calculator.p.rapidapi.com",
+		"x-rapidapi-key": "a364e389c4msh7bcadf55d1e46dep10df0fjsn49dcba286647"
+	}
+})
+.then(response =>response.json()
+).then(res=>{console.log(res)})
+.catch(err => {
+	console.log(err);
+});
+    
   }
   render(){
   return (
@@ -23,7 +35,7 @@ class  App extends React.Component {
    
       label="Enter Male Name"
       value={this.state.text}
-      onChangeText={text =>console.log(text)
+      onChangeText={text =>this.setState({Male:text})
       }
     />
       <TextInput
