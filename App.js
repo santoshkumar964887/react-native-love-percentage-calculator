@@ -23,7 +23,8 @@ class  App extends React.Component {
 .catch(err => {
 	console.log(err);
 });
-    
+this.setState({Male:"",Female:""});
+
   }
   render(){
   return (
@@ -34,7 +35,7 @@ class  App extends React.Component {
     <TextInput
    
       label="Enter Male Name"
-      value={this.state.text}
+      value={this.state.Male}
       onChangeText={text =>this.setState({Male:text})
       }
     />
