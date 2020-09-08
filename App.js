@@ -8,7 +8,8 @@ class  App extends React.Component {
     super();
     this.state={
       Male:"",
-      Female:""
+      Female:"",
+      data:""
     }
   }
   handlepress=()=>{
@@ -20,7 +21,7 @@ class  App extends React.Component {
 	}
 })
 .then(response =>response.json()
-).then(res=>{console.log(res)})
+).then(res=>this.setState({data:res}))
 .catch(err => {
 	console.log(err);
 });
@@ -28,6 +29,7 @@ this.setState({Male:"",Female:""});
 
   }
   render(){
+   
   return (
     <View>
      <Appbar.Header>
@@ -46,7 +48,7 @@ this.setState({Male:"",Female:""});
       onChangeText={text =>this.setState({Female:text})}
     />
      <Button style={{margin:12}}  mode="contained" onPress={this.handlepress}>Love Calculator</Button>
-     <Showresult/>
+     <Showresult data={this.state}/>
     </View>
   );
   }

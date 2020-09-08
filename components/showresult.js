@@ -1,6 +1,8 @@
 import React  from 'react';
 import {StyleSheet, View,Text} from 'react-native';
-export default showresult=()=>{
+export default showresult=(props)=>{
+    console.log(props);
+
     return(
         <View style={styles.container}>
     <Text>Santosh</Text>
@@ -13,6 +15,6 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop:"20"
+      marginTop:40
     },
   });
