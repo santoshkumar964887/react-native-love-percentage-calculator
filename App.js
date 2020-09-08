@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 import { Appbar,TextInput, Button  } from 'react-native-paper';
 import Showresult from './components/showresult';
+
 class  App extends React.Component {
   constructor(){
     super();
@@ -47,8 +48,10 @@ this.setState({Male:"",Female:""});
       value={this.state.Female}
       onChangeText={text =>this.setState({Female:text})}
     />
-     <Button style={{margin:12}}  mode="contained" onPress={this.handlepress}>Love Calculator</Button>
-     <Showresult data={this.state}/>
+     <Button style={{margin:12}} mode="contained" onPress={this.handlepress}>Love Calculator</Button>
+     {
+     
+       this.state.data?<Showresult data={this.state.data}/>:null}
     </View>
   );
   }
