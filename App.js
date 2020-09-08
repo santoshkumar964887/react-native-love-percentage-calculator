@@ -51,18 +51,24 @@ this.setState({Male:"",Female:""});
      <Button style={{margin:12}} mode="contained" onPress={this.handlepress}>Love Calculator</Button>
      {
      
-       this.state.data?<Showresult data={this.state.data}/>:null}
+       this.state.data?<Showresult data={this.state.data}/>:<Text style={styles.percentage}>Enter your name and the name of your partner/lover/crush to find Love compatibility & chances of successful love relationship.</Text>}
+
     </View>
   );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  percentage:{
+    color:"rgb(68, 48, 102)",
+     fontSize:18,
+     fontWeight:"700",
+      margin:12,
+      lineHeight:25,
+      letterSpacing:2,
+    
+      
+
+    }
 });
 export default App;
